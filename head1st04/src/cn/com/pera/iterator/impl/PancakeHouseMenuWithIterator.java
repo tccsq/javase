@@ -1,14 +1,16 @@
-package cn.com.pera.iterator.entity;
+package cn.com.pera.iterator.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.com.pera.iterator.entity.MenuItem;
+import cn.com.pera.iterator.interfaces.Iterator;
 
-public class PancakeHouseMenu {
+public class PancakeHouseMenuWithIterator {
 
 	private List<MenuItem> menuitems;
 
-	public PancakeHouseMenu() {
+	public PancakeHouseMenuWithIterator() {
 		this.menuitems = new ArrayList<MenuItem>();
 		addItem("山东煎饼早餐", "煎鸡蛋", 2.99f, true);
 		addItem("标准煎饼早餐", "煎鸡蛋加火腿肠", 2.99f, false);
@@ -22,8 +24,8 @@ public class PancakeHouseMenu {
 		menuitems.add(menu);
 	}
 
-	public List<MenuItem> getMenuitems() {
-		return menuitems;
+	public Iterator createIterator() {
+		return new PancakeHouseMenuIterator(menuitems);
 	}
 
 }

@@ -1,12 +1,14 @@
-package cn.com.pera.iterator.entity;
+package cn.com.pera.iterator.impl;
 
+import cn.com.pera.iterator.entity.MenuItem;
+import cn.com.pera.iterator.interfaces.Iterator;
 
-public class DinerMenu {
+public class DinerMenuWithIterator {
 	private static final int MAX_LENGTH = 6;
 	private int numberOfItems = 0;
 	private MenuItem[] menuitems;
 
-	public DinerMenu() {
+	public DinerMenuWithIterator() {
 		menuitems = new MenuItem[MAX_LENGTH];
 		addItem("蔬菜三明治", "随便来点蔬菜", 2.99f, true);
 		addItem("牛肉汤", "牛肉、火腿肠", 2.99f, false);
@@ -25,8 +27,8 @@ public class DinerMenu {
 		}
 	}
 
-	public MenuItem[] getMenuitems() {
-		return menuitems;
+	public Iterator createIterator() {
+		return new DinerMenuIterator(menuitems);
 	}
 
 }

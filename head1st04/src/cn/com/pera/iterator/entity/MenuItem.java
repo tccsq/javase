@@ -46,4 +46,12 @@ public class MenuItem {
 		this.vegetarian = vegetarian;
 	}
 
+	@Override
+	public String toString() {
+		return "MenuItem [name=" + name + ", desc=" + desc + ", price=" + price
+				+ ", vegetarian=" + vegetarian + "]";
+	}
+	
+	
+
 }
